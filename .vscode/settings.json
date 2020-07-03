@@ -1,0 +1,9 @@
+{
+  "editor.formatOnSave": false,
+  "editor.tabSize": 2,
+  "workbench.colorCustomizations": {
+    "titleBar.activeBackground": "#e43104",
+    "titleBar.activeForeground": "#f3f3f3"
+  },
+  "css.validate": false
+}

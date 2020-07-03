@@ -1,0 +1,15 @@
+@tailwind base;
+
+@import './base.css';
+@import './gradients.css';
+
+@tailwind components;
+@tailwind utilities;
+
+@import './typography.css';
+@import './animations.css';
+@import './plugin-multiselect.css';
+
+.pl-error-message {
+  padding-left: 1.125rem;
+}
