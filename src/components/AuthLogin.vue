@@ -55,7 +55,7 @@
       </div>
     </form>
 
-    <!-- <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
       <p class="mb-4">
         <a
           class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
@@ -70,7 +70,7 @@
           >Login by Google</a
         >
       </p>
-    </div> -->
+    </div>
   </div>
 </template>
 
