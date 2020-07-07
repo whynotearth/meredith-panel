@@ -6,17 +6,23 @@
     <template #content>
       <div class="bg-white flex items-center justify-center min-h-full relative flex-shrink-0 py-6 text-center">
         <div class="w-full">
-          <div class="max-w-sm mx-auto px-12">
-            <h1 class="text-primary h1-mobile md:h1 mb-h1-mobile mb-14">Meredith Panel</h1>
+          <div class="max-w-sm mx-auto px-12 text-center">
+            <img class="mx-auto" src="https://placehold.it/184x184" alt="logo" />
+            <h1 class="text-primary h1-mobile md:h1 mb-h1-mobile mb-4">Meredith Core</h1>
 
-            <div>
-              <router-link
-                :to="{ name: 'AuthLogin' }"
-                class="block bg-primary w-full text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile"
-              >
-                Login
-              </router-link>
-            </div>
+            <h2>Webapps for you</h2>
+
+            <p class="mb-4">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Facere explicabo praesentium enim dolorum illo.
+              Totam asperiores veniam fugit voluptatibus odio.
+            </p>
+
+            <router-link
+              :to="{ name: 'AuthLogin' }"
+              class="block bg-primary w-full text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile"
+            >
+              Login
+            </router-link>
           </div>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import AuthLogin from '../views/AuthLogin.vue';
+import AuthSignup from '../views/AuthSignup.vue';
 import Settings from '../views/Settings';
 import MyAccount from '../views/MyAccount';
 import ChangePassword from '../views/MyAccountChangePassword';
@@ -27,6 +28,14 @@ const routes = [
     path: '/login',
     name: 'AuthLogin',
     component: AuthLogin,
+    meta: {
+      isPublic: true
+    }
+  },
+  {
+    path: '/signup',
+    name: 'AuthSignup',
+    component: AuthSignup,
     meta: {
       isPublic: true
     }

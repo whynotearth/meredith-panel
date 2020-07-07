@@ -69,7 +69,8 @@
 }
 
 .multiselect__option--highlight {
-  @apply bg-secondary-012;
+  @apply bg-secondary;
+  @apply bg-opacity-12;
   @apply text-black;
 }
 
