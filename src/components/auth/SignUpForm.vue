@@ -78,27 +78,21 @@ export default {
       if (this.page > 1) {
         this.pageChange(this.page - 1);
       } else if (this.page === 1) {
-        this.$router.push({ name: 'Welcome' });
+        this.$router.push({ name: 'Dashboard' });
       }
     },
     nextStep() {
       let valid = true;
       const isThereValidationAtComponent = !!this.$refs[this.component].$v;
       if (isThereValidationAtComponent) {
-        console.log('1111');
-
         this.$refs[this.component].$v.$touch();
         valid = !this.$refs[this.component].$v.$invalid;
       }
 
       if (valid) {
-        console.log('2222');
-
         if (this.page < this.navigation.length) {
           this.pageChange(this.page + 1);
         } else {
-          console.log('show overlay redirect.....');
-
           showOverlayAndRedirect({ title: 'Success!', route: { name: 'Dashboard' } });
         }
       }

@@ -174,7 +174,7 @@ export async function showOverlayAndRedirect({ title = '', message = '', route, 
     message
   });
 
-  await sleep(1000);
+  await sleep(timeout);
 
   await router.push(route);
 

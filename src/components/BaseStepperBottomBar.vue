@@ -7,7 +7,14 @@
       @clicked="$emit('previousStep')"
       v-if="firstPageStepBack || page != 1"
     />
-    <Button :titleRight="nextStepText" :width="'flex-grow'" @clicked="$emit('nextStep')" v-if="!hideNext" />
+    <Button
+      buttonBg="bg-secondary"
+      textColor="text-black"
+      :titleRight="nextStepText"
+      :width="'flex-grow'"
+      @clicked="$emit('nextStep')"
+      v-if="!hideNext"
+    />
   </div>
 </template>
 
