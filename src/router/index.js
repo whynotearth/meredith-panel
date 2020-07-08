@@ -1,18 +1,17 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import AuthLogin from '../views/AuthLogin.vue';
 import Settings from '../views/Settings';
 import MyAccount from '../views/MyAccount';
 import ChangePassword from '../views/MyAccountChangePassword';
 import Dashboard from '../views/Dashboard';
 import DeveloperTesting from '../views/DeveloperTesting.vue';
-import AuthForgotPassword from '../views/AuthForgotPassword';
-import AuthNewPassword from '../views/AuthNewPassword';
-// import store from '../store';
+
+import { authRoutes } from './authRoutes';
 
 Vue.use(VueRouter);
 
 const routes = [
+  ...authRoutes,
   {
     path: '/test',
     name: 'DeveloperTesting',
@@ -22,30 +21,6 @@ const routes = [
     path: '/',
     name: 'Dashboard',
     component: Dashboard
-  },
-  {
-    path: '/login',
-    name: 'AuthLogin',
-    component: AuthLogin,
-    meta: {
-      isPublic: true
-    }
-  },
-  {
-    path: '/forgot-password',
-    name: 'AuthForgotPassword',
-    component: AuthForgotPassword,
-    meta: {
-      isPublic: true
-    }
-  },
-  {
-    path: '/new-password',
-    name: 'AuthNewPassword',
-    component: AuthNewPassword,
-    meta: {
-      isPublic: true
-    }
   },
   // settings
   // -----------------------

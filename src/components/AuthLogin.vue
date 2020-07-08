@@ -1,6 +1,6 @@
 <template>
   <div>
-    <form ref="form" name="Login" @submit.prevent="submit" class="py-4 text-left">
+    <!-- <form ref="form" name="Login" @submit.prevent="submit" class="py-4 text-left">
       <div class="mb-4">
         <BaseInputText
           class="bg-surface"
@@ -37,9 +37,8 @@
         </span>
       </div>
       <div class="auth-button">
-        <!-- submit button -->
         <button
-          class="bg-secondary w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile"
+          class="bg-secondary w-full hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile cursor-pointer"
           type="submit"
         >
           Log In
@@ -53,36 +52,34 @@
           </router-link>
         </div>
       </div>
-    </form>
+    </form> -->
 
-    <!-- <div class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
+    <div class="rounded pt-6 pb-8 mb-4">
       <p class="mb-4">
         <a
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="text-center block bg-primary w-full text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile cursor-pointer"
           @click="oauth('Facebook')"
           >Login by Facebook</a
         >
       </p>
       <p class="mb-4">
         <a
-          class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
+          class="text-center block bg-primary w-full text-white font-bold py-2 px-4 rounded-full focus:outline-none focus:shadow-outline transition duration-100 ease-in-out transition-all label-mobile cursor-pointer"
           @click="oauth('Google')"
           >Login by Google</a
         >
       </p>
-    </div> -->
+    </div>
   </div>
 </template>
 
 <script>
 import store from '@/store';
 import isEmail from 'validator/lib/isEmail';
-import BaseInputText from '@/components/BaseInputText.vue';
 import { required, email } from 'vuelidate/lib/validators';
 
 export default {
   name: 'AuthLogin',
-  components: { BaseInputText },
   validations: {
     email: {
       required,

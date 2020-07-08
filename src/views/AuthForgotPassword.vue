@@ -48,7 +48,7 @@ import isEmail from 'validator/lib/isEmail';
 import BaseAppBarHeader from '@/components/BaseAppBarHeader';
 import BaseInputText from '@/components/BaseInputText';
 import LayoutFixedScrollable from '@/components/LayoutFixedScrollable.vue';
-import BaseButton from '@/components/BaseButton.vue';
+import BaseButton from '@/components/Button.vue';
 import { required, email } from 'vuelidate/lib/validators';
 import { sleep } from '@/helpers.js';
 

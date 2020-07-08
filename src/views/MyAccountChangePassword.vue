@@ -69,7 +69,7 @@ import store from '@/store';
 import BaseAppBarHeader from '@/components/BaseAppBarHeader';
 import BaseInputText from '@/components/BaseInputText';
 import LayoutFixedScrollable from '@/components/LayoutFixedScrollable.vue';
-import BaseButton from '@/components/BaseButton.vue';
+import BaseButton from '@/components/Button.vue';
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import { required, password, sameAs } from 'vuelidate/lib/validators';
 import { sleep } from '@/helpers.js';

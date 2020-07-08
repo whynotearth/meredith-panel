@@ -44,7 +44,7 @@
 import { mapGetters, mapMutations, mapActions } from 'vuex';
 import { required, email } from 'vuelidate/lib/validators';
 import BaseInputText from '@/components/BaseInputText.vue';
-import BaseButton from '@/components/BaseButton.vue';
+import BaseButton from '@/components/Button.vue';
 import { sleep } from '@/helpers.js';
 
 export default {

@@ -1,7 +1,8 @@
 // https://github.com/tailwindcss/tailwindcss/blob/master/stubs/defaultConfig.stub.js#L5
 const defaultTheme = require('tailwindcss/defaultTheme');
-const { colors } = require('tailwindcss/defaultTheme');
-const customUtils = require('./src/styles/tailwind-utilities');
+const boxShadow = require('./src/styles/boxShadow');
+const colors = require('./src/styles/colors');
+const opacity = require('./src/styles/opacity');
 
 module.exports = {
   theme: {
@@ -11,31 +12,12 @@ module.exports = {
       lg: '928px'
     },
     extend: {
+      boxShadow,
+      colors,
+      opacity,
       container: { padding: '1.5rem', center: true },
       cursor: {
         inherit: 'inherit'
-      },
-      colors: {
-        inherit: 'inherit',
-        blue: {
-          ...colors.blue,
-          '500': '#008ec6',
-          '900': '#002F62'
-        },
-        primary: '#EA5455',
-        secondary: '#EA5455',
-        background: '#FFFFFF',
-        surface: '#FFFFFF',
-        error: '#FF5959',
-        success: '#52AE31',
-        priority: '#D84E4E',
-        events: '#FFBA03',
-        plant: '#8894A0',
-        community: '#52AE31',
-        people: '#01B1EC',
-        oneteam: '#D9EFFF',
-        answers: '#EDEDED',
-        divider: 'rgba(0,0,0,0.12)'
       },
       spacing: {
         '0.5': '0.125rem',
@@ -97,35 +79,13 @@ module.exports = {
       inset: {
         '1/2': '50%'
       },
-      boxShadow: {
-        '1dp': '0 1px 3px rgba(0, 0, 0, 0.2), 0 2px 2px rgba(0, 0, 0, 0.12), 0 0 2px rgba(0, 0, 0, 0.14)',
-        '2dp': '0 1px 5px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14)',
-        '3dp': '0 1px 8px rgba(0, 0, 0, 0.2), 0 3px 4px rgba(0, 0, 0, 0.12), 0 3px 3px rgba(0, 0, 0, 0.14)',
-        '4dp': '0 1px 10px rgba(0, 0, 0, 0.2), 0 4px 5px rgba(0, 0, 0, 0.12), 0 2px 4px rgba(0, 0, 0, 0.14)',
-        '6dp': '0 3px 5px rgba(0, 0, 0, 0.2), 0 1px 18px rgba(0, 0, 0, 0.12), 0 6px 10px rgba(0, 0, 0, 0.14)',
-        '8dp': '0 4px 5px rgba(0, 0, 0, 0.2), 0 3px 14px rgba(0, 0, 0, 0.12), 0 8px 10px rgba(0, 0, 0, 0.14)',
-        '9dp': '0 5px 6px rgba(0, 0, 0, 0.2), 0 3px 16px rgba(0, 0, 0, 0.12), 0 9px 12px rgba(0, 0, 0, 0.14)',
-        '12dp': '0 7px 8px rgba(0, 0, 0, 0.2), 0 5px 22px rgba(0, 0, 0, 0.12), 0 12px 17px rgba(0, 0, 0, 0.14)',
-        '16dp': '0 8px 10px rgba(0, 0, 0, 0.2), 0 6px 30px rgba(0, 0, 0, 0.12), 0 16px 24px rgba(0, 0, 0, 0.14)',
-        '24dp': '0 11px 15px rgba(0, 0, 0, 0.2), 0 9px 46px rgba(0, 0, 0, 0.12), 0 24px 38px rgba(0, 0, 0, 0.14)',
-        card: '0px 2px 4px rgba(0, 0, 0, 0.25)'
-      },
       minHeight: {
         '104': '26rem'
-      },
-      opacity: {
-        '12': '0.12',
-        '18': '0.18',
-        '38': '0.38',
-        '54': '0.54',
-        '84': '0.84',
-        '90': '0.90'
       }
     }
   },
   variants: {
     backgroundColor: ['responsive', 'hover', 'focus', 'active'],
     borderWidth: ['responsive', 'hover', 'focus', 'active', 'last']
-  },
-  plugins: [...customUtils]
+  }
 };

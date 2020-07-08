@@ -2,7 +2,7 @@
   <div class="page h-full flex flex-col position-relative">
     <slot name="header" />
     <div class="content-section flex-grow z-10">
-      <div class="px-0 overflow-y-auto overflow-x-hidden flex flex-col h-full narrow-scrollbars pb-14">
+      <div class="px-0 overflow-y-auto overflow-x-hidden flex flex-col h-full narrow-scrollbar pb-14">
         <transition name="fadeslow" mode="out-in">
           <slot v-if="isVisible" name="content" />
         </transition>
