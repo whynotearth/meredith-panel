@@ -70,7 +70,7 @@ export default {
         id: 2,
         title: 'Brow Tricks Beauty',
         subtitle: '$ | Salon Booking | Open Source',
-        url: 'https://foodouken.com',
+        url: 'https://www.browtricks.com/TODO:fixlink',
         tags: ['E-COMMERCE', 'SMALL BUSINESS FOCUSED']
       }
     ]
