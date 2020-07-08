@@ -17,7 +17,7 @@
 <script>
 import { mapMutations, mapGetters } from 'vuex';
 import Button from '@/components/Button.vue';
-// import facebookLogo from '@/assets/facebook2.png';
+import facebookLogo from '@/assets/facebook2.png';
 import googleLogo from '@/assets/google.png';
 
 export default {
@@ -28,12 +28,10 @@ export default {
   data() {
     return {
       socialMediaProviders: [
-        /*
         {
           name: 'Facebook',
           logo: facebookLogo
         },
-        */
         {
           name: 'Google',
           logo: googleLogo

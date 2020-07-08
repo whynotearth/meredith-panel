@@ -7,6 +7,7 @@ import category from './modules/category';
 import loading from './modules/loading';
 import snackbar from './modules/snackbar';
 import overlay from './modules/overlay';
+import tenant from './modules/tenant';
 import settings from './modules/settings';
 import VuexPersistence from 'vuex-persist';
 
@@ -28,6 +29,7 @@ export default new Vuex.Store({
     category,
     authKeep,
     overlay,
+    tenant,
     settings
   }
 });

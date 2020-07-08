@@ -37,20 +37,6 @@
       </span>
     </material-input>
     <text-area v-model="$v.description.$model" label="Description" labelBg="bg-background" />
-    <hr class="border-white border-opacity-12 my-8" />
-    <ImageUpload class="clear-margin" v-model="logo" :defaultImages="logo">
-      <template #title>
-        <div class="tg-body-mobile ">
-          <span class="text-white text-opacity-65"> Logo </span>
-          <span class="text-white text-opacity-38">
-            ( 500 x 599 pixels JPEG / PNG )
-          </span>
-        </div>
-      </template>
-    </ImageUpload>
-    <span v-if="$v.logo.$dirty && $v.logo.$error" class="text-red-600 text-xs">
-      Logo is required
-    </span>
   </div>
 </template>
 
@@ -59,14 +45,12 @@ import { mapMutations, mapGetters } from 'vuex';
 import { required, email, minLength } from 'vuelidate/lib/validators';
 import MaterialInput from '@/components/inputs/MaterialInput';
 import TextArea from '@/components/inputs/TextArea.vue';
-import ImageUpload from '@/components/imageUpload/ImageUpload.vue';
 
 export default {
   name: 'BusinessInfo',
   components: {
     MaterialInput,
-    TextArea,
-    ImageUpload
+    TextArea
   },
   data() {
     return {};
@@ -83,17 +67,10 @@ export default {
       required,
       minLength: minLength(7)
     },
-    description: {},
-    logo: {
-      $each: {
-        secure_url: {
-          required
-        }
-      }
-    }
+    description: {}
   },
   computed: {
-    ...mapGetters('tenant', ['getName', 'getEmail', 'getPhone', 'getDescription', 'getLogo']),
+    ...mapGetters('tenant', ['getName', 'getEmail', 'getPhone', 'getDescription']),
     name: {
       get() {
         return this.getName;
@@ -125,18 +102,10 @@ export default {
       set(value) {
         this.updateDescription(value);
       }
-    },
-    logo: {
-      get() {
-        return [{ secure_url: this.getLogo }];
-      },
-      set(value) {
-        this.updateLogo(value[0] ? value[0].secure_url : '');
-      }
     }
   },
   methods: {
-    ...mapMutations('tenant', ['updateName', 'updateEmail', 'updatePhone', 'updateDescription', 'updateLogo'])
+    ...mapMutations('tenant', ['updateName', 'updateEmail', 'updatePhone', 'updateDescription'])
   }
 };
 </script>

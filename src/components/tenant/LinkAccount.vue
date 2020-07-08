@@ -1,7 +1,7 @@
 <template>
   <div class="px-8">
     <div class="py-10">
-      <h4 class="tg-body-mobile text-white text-opacity-84">
+      <h4 class="tg-body-mobile text-white text-opacity-84 text-center">
         Link your Facebook or Google account to get started!
       </h4>
     </div>
@@ -44,7 +44,7 @@ export default {
           this.isAuthenticated = true;
         }
 
-        if (this.$router.history._startLocation.includes(this.$route.params.step) && this.$route.query.signUpStarted) {
+        if (result.loginProviders.length > 0) {
           this.$emit('nextStep');
         }
       })

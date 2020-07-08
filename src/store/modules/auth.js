@@ -292,12 +292,12 @@ export default {
         context.commit('logout');
       });
     },
-    async ping(context) {
+    async ping({ commit }) {
       try {
-        const params = {};
-        const options = {};
-        const user = await AuthenticationService.ping(params, options);
-        await store.dispatch('authKeep/updateUser', user);
+        const response = await AuthenticationService.ping();
+        await store.dispatch('authKeep/updateUser', response);
+        commit('updateProvider', response.loginProviders[0]);
+        return response;
       } catch (error) {
         const isStatus401 = error.response && error.response.status;
         if (isStatus401) {
@@ -305,11 +305,10 @@ export default {
           await store.dispatch('authKeep/clear');
           return 'IS_LOGGED_OUT';
         } else {
-          console.log('ping error unknown');
+          console.log('ping error unknown', error);
           return false;
         }
       }
-      return true;
     }
   }
 };

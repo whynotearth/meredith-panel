@@ -34,9 +34,7 @@ import StepperTop from '@/components/BaseStepperTopBar';
 import StepperBottom from '@/components/BaseStepperBottomBar';
 import BusinessInfo from '@/components/tenant/BusinessInfo';
 import LinkAccount from '@/components/tenant/LinkAccount';
-import Notifications from '@/components/tenant/Notifications';
-import BusinessHours from '@/components/tenant/BusinessHours';
-import PaymentMethods from '@/components/tenant/PaymentMethods';
+import { showOverlayAndRedirect } from '@/helpers';
 
 export default {
   name: 'SignUpForm',
@@ -44,33 +42,18 @@ export default {
     StepperTop,
     StepperBottom,
     BusinessInfo,
-    LinkAccount,
-    Notifications,
-    BusinessHours,
-    PaymentMethods
+    LinkAccount
   },
   data() {
     return {
       navigation: [
         {
           step: 'business-info',
-          name: 'Business Info'
+          name: 'Your Info'
         },
         {
           step: 'link-account',
           name: 'Link Account'
-        },
-        {
-          step: 'notifications',
-          name: 'Notifications'
-        },
-        {
-          step: 'business-hours',
-          name: 'Business Hours'
-        },
-        {
-          step: 'payment-methods',
-          name: 'Payment Methods'
         }
       ],
       errors: null
@@ -102,29 +85,23 @@ export default {
       let valid = true;
       const isThereValidationAtComponent = !!this.$refs[this.component].$v;
       if (isThereValidationAtComponent) {
+        console.log('1111');
+
         this.$refs[this.component].$v.$touch();
         valid = !this.$refs[this.component].$v.$invalid;
       }
 
       if (valid) {
+        console.log('2222');
+
         if (this.page < this.navigation.length) {
           this.pageChange(this.page + 1);
         } else {
-          this.register();
+          console.log('show overlay redirect.....');
+
+          showOverlayAndRedirect({ title: 'Success!', route: { name: 'Dashboard' } });
         }
       }
-    },
-    register() {
-      this.createTenant()
-        .then(res => {
-          this.$router.push({
-            name: 'SignUpSuccess',
-            params: { slug: res }
-          });
-        })
-        .catch(error => {
-          this.errors = error.response.data.errors;
-        });
     }
   },
   watch: {
