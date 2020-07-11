@@ -27,3 +27,7 @@ yarn run lint
 ## Tools
 
 [<img src="https://raw.githubusercontent.com/whynotearth/shinta-mani-wild/master/src/assets/img/browserstack-logo.png">](https://browserstack.com)
+
+## License
+
+Licensed under the [GNU Affero General Public License v3.0](LICENSE).
